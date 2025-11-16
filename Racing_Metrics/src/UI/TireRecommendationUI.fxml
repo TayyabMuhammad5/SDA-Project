@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.TireRecommendationController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Tire Recommendation" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <HBox spacing="8">
+                <Label text="Track:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbTrack"/>
+                <Button text="Recommend" onAction="#recommend"/>
+            </HBox>
+            <TextArea fx:id="taRecommendation" prefHeight="200" prefWidth="400"
+                      style="-fx-control-inner-background:#1a1a1a; -fx-text-fill:#fff;" />
+        </VBox>
+    </center>
+</BorderPane>

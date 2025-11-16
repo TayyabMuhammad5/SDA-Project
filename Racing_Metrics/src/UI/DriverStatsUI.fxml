@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.DriverStatsController"
+            stylesheets="@styles.css"
+            style="-fx-background-color:#0b0b0b; -fx-padding:12;">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Driver Stats" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <!-- Driver selection row -->
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="Driver:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbDriver" prefWidth="200"/>
+            </HBox>
+
+            <!-- Stats cards row -->
+            <HBox spacing="14">
+                <VBox spacing="4" styleClass="stat-card">
+                    <Label text="Active Drivers" styleClass="stat-label"/>
+                    <Label text="24" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="4" styleClass="stat-card">
+                    <Label text="Upcoming Races" styleClass="stat-label"/>
+                    <Label text="8 – Next: Monaco" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="4" styleClass="stat-card">
+                    <Label text="Avg Lap Time" styleClass="stat-label"/>
+                    <Label text="1:32.451" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="4" styleClass="stat-card">
+                    <Label text="Pit Stop Avg" styleClass="stat-label"/>
+                    <Label text="2.4s" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+
+            <!-- BarChart placeholder -->
+            <BarChart fx:id="barChart" prefHeight="300" prefWidth="600">
+                <xAxis>
+                    <CategoryAxis label="Races"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Points"/>
+                </yAxis>
+            </BarChart>
+
+            <!-- Chart info placeholder -->
+            <Label text="(Charts and stats will be shown here)"
+                   style="-fx-text-fill:#9ca3af; -fx-font-style:italic;" />
+
+        </VBox>
+    </center>
+
+</BorderPane>
+
+

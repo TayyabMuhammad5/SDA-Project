@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RaceEntryController" stylesheets="@styles.css" style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+  <top>
+    <HBox spacing="8">
+      <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+      <Label text="Race Entry" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+    </HBox>
+  </top>
+  <center>
+    <VBox spacing="8">
+      <TableView fx:id="raceTable" prefHeight="400">
+        <columns>
+          <TableColumn fx:id="colRaceId" text="ID" prefWidth="60" />
+          <TableColumn fx:id="colRaceDate" text="Date" prefWidth="140" />
+          <TableColumn fx:id="colRaceLocation" text="Location" prefWidth="200" />
+          <TableColumn fx:id="colRaceWeather" text="Weather" prefWidth="120" />
+        </columns>
+      </TableView>
+      <HBox spacing="8">
+        <Button text="Add Race" />
+        <Button text="Edit Race" />
+      </HBox>
+    </VBox>
+  </center>
+</BorderPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SeasonRankingController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Season Ranking" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+            <ComboBox fx:id="cbSeason" onAction="#computeRanking" promptText="Select Season" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <TableView fx:id="table" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colRank" text="Rank" prefWidth="60"/>
+                    <TableColumn fx:id="colDriver" text="Driver" prefWidth="200"/>
+                    <TableColumn fx:id="colPoints" text="Points" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <Button text="Export CSV" onAction="#exportCsv"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="controllers.LoginController"
+           stylesheets="@styles.css"
+           prefWidth="1000" prefHeight="700">
+
+  <VBox alignment="CENTER" spacing="20" StackPane.alignment="CENTER" styleClass="login-root">
+
+    <!-- Header Section -->
+    <VBox alignment="CENTER" spacing="8" VBox.vgrow="NEVER" styleClass="login-header">
+      <Label text="⚑" styleClass="login-flag" />
+      <Label text="F1 RACING MIS" styleClass="login-title" />
+      <Rectangle width="100" height="2" styleClass="accent-line" />
+      <Label text="MANAGEMENT INFORMATION SYSTEM" styleClass="login-subtitle" />
+    </VBox>
+
+    <!-- Card Section -->
+    <StackPane style="-fx-background-color: #1a1a1a; 
+                      -fx-border-color: #27272a; 
+                      -fx-border-width: 1; 
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, 5);"
+               prefWidth="420" prefHeight="500">
+
+    <VBox spacing="18" alignment="TOP_CENTER" styleClass="login-card">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+
+
+        <!-- Decorative Gradient -->
+        <HBox prefHeight="3" style="-fx-background-color: linear-gradient(to right, #dc2626 0%, #f97316 50%, #dc2626 100%);"/>
+
+        <!-- Error Container -->
+       <VBox fx:id="errorContainer" visible="false" managed="false" spacing="8" styleClass="alert-error">
+    <HBox spacing="6">
+        <Label fx:id="errorMessage" text="" styleClass="field-label"/>
+    </HBox>
+</VBox>
+
+
+        <!-- Username Field -->
+        <VBox spacing="6">
+          <HBox spacing="6">
+            <Label text="👤" style="-fx-font-size: 14px;"/>
+            <Label text="USERNAME" style="-fx-text-fill: #d1d5db; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+          </HBox>
+          <TextField fx:id="usernameField" promptText="Enter username" prefHeight="40" styleClass="input-field"/>
+        </VBox>
+
+        <!-- Password Field -->
+        <VBox spacing="6">
+          <HBox spacing="6">
+            <Label text="🔒" styleClass="field-icon" />
+            <Label text="PASSWORD" styleClass="field-label" />
+          </HBox>
+          <PasswordField fx:id="passwordField" promptText="Enter password" prefHeight="40" styleClass="input-field"/>
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" text="LOGIN" onAction="#handleLogin" prefHeight="45" prefWidth="Infinity" styleClass="primary-btn" />
+
+        <!-- Loading Container -->
+        <VBox fx:id="loadingContainer" visible="false" managed="false" alignment="CENTER" spacing="8" styleClass="loading-box">
+          <ProgressIndicator fx:id="loadingIndicator" prefWidth="40" prefHeight="40" />
+          <Label text="AUTHENTICATING..." styleClass="loading-label" />
+        </VBox>
+
+        <Separator style="-fx-padding: 10 0; -fx-border-color: #27272a;"/>
+
+        <!-- Footer Links -->
+        <HBox alignment="CENTER_LEFT" spacing="16">
+          <Hyperlink text="Forgot Password?" onAction="#handleForgot" style="-fx-text-fill: #9ca3af; -fx-font-size: 11px; -fx-padding: 0;"/>
+          <Region HBox.hgrow="ALWAYS"/>
+          <HBox alignment="CENTER_RIGHT" spacing="6">
+            <Circle radius="3" fill="#dc2626"/>
+            <Label text="SECURE" style="-fx-text-fill: #9ca3af; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+          </HBox>
+        </HBox>
+
+      </VBox>
+    </StackPane>
+
+    <!-- Footer Label -->
+    <Label text="© 2025 F1 Racing MIS • All Rights Reserved" 
+           style="-fx-text-fill: #9ca3af; -fx-font-size: 10px;" 
+           VBox.vgrow="NEVER"/>
+
+  </VBox>
+
+</StackPane>
+

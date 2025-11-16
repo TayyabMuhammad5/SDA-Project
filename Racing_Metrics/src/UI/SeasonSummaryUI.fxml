@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SeasonSummaryController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Season Summary" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="12">
+            <LineChart fx:id="lineChart" title="Season Points"
+                       prefHeight="400" prefWidth="600">
+                <xAxis>
+                    <NumberAxis label="Race"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Points"/>
+                </yAxis>
+            </LineChart>
+            <Button text="Show Aggregate" onAction="#showAggregate"/>
+        </VBox>
+    </center>
+</BorderPane>
+

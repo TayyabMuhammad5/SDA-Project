@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LapTimeController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Record Lap Times" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+
+            <HBox spacing="8">
+                <Label text="Driver:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbDriver" />
+
+                <Label text="Race:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbRace" />
+            </HBox>
+
+            <TableView fx:id="tableLapTimes" prefHeight="360">
+                <columns>
+                    <TableColumn fx:id="colLapNo" text="Lap" />
+                    <TableColumn fx:id="colDriver" text="Driver" />
+                    <TableColumn fx:id="colTime" text="Time" />
+                </columns>
+            </TableView>
+
+            <HBox spacing="8">
+                <TextField fx:id="tfLapTime" promptText="Seconds.millis (e.g., 78.345)" />
+                <Button fx:id="btnSave" text="Save" onAction="#saveLap" />
+                <Button text="Export CSV" onAction="#exportCsv" />
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>

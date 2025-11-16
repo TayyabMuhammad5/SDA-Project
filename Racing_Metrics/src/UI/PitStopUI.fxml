@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PitStopController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Record Pit Stops" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <HBox spacing="8">
+                <Label text="Race:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbRace" />
+                <Label text="Driver:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbDriver" />
+                <Label text="Duration (s):" style="-fx-text-fill:#fff;" />
+                <TextField fx:id="tfStopDuration" />
+            </HBox>
+
+            <Label text="Notes:" style="-fx-text-fill:#fff;" />
+            <TextArea fx:id="taNotes" prefRowCount="2" />
+
+            <TableView fx:id="tablePit" prefHeight="360">
+                <columns>
+                    <TableColumn fx:id="colPitNo" text="Stop#" />
+                    <TableColumn fx:id="colPitDriver" text="Driver" />
+                    <TableColumn fx:id="colDuration" text="Duration" />
+                </columns>
+            </TableView>
+
+            <HBox spacing="8">
+                <Button text="Save" onAction="#savePit" fx:id="btnSave" />
+                <Button text="Export CSV" onAction="#exportCsv" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

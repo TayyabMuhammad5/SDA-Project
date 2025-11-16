@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PerformanceReportController"
+            stylesheets="@styles.css"
+            style="-fx-padding:12; -fx-background-color:#0b0b0b;">
+
+    <top>
+        <HBox spacing="8">
+            <Button text="← Back to Dashboard" onAction="#backToDashboard" />
+            <Label text="Performance Report" style="-fx-text-fill:#fff; -fx-font-size:16; -fx-font-weight:bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <HBox spacing="8">
+                <Label text="Filter:" style="-fx-text-fill:#fff;" />
+                <ComboBox fx:id="cbDriver" />  <!-- Add fx:id to match controller -->
+                <Button text="Generate" onAction="#generateReport"/> <!-- Example method -->
+            </HBox>
+            <Label text="(Report preview will appear here)" style="-fx-text-fill:#9ca3af;" />
+        </VBox>
+    </center>
+
+</BorderPane>

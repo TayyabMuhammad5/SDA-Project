@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController" stylesheets="@styles.css" prefWidth="1100" prefHeight="700">
+
+  <top>
+    <VBox styleClass="header-box">
+      <HBox alignment="CENTER_LEFT" spacing="12" styleClass="header-row">
+        <Label text="⚑" styleClass="logo" />
+        <VBox>
+          <Label text="F1 RACING MIS" styleClass="app-title" />
+          <Label text="Management Dashboard" styleClass="app-subtitle" />
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <HBox spacing="12" alignment="CENTER_RIGHT">
+          <Label text="SYSTEM ONLINE" styleClass="status-online" />
+          <Button text="Logout" onAction="#logout" styleClass="ghost-btn" />
+        </HBox>
+      </HBox>
+        <HBox spacing="14" styleClass="stats-row">
+            <Pane styleClass="stat-card">
+                <VBox spacing="4" layoutX="10" layoutY="10"> <!-- small gap between labels -->
+                    <Label text="Active Drivers" styleClass="stat-label" />
+                    <Label text="24" styleClass="stat-value" />
+                </VBox>
+            </Pane>
+
+            <Pane styleClass="stat-card">
+                <VBox spacing="4" layoutX="10" layoutY="10">
+                    <Label text="Upcoming Races" styleClass="stat-label" />
+                    <Label text="8 – Next: Monaco" styleClass="stat-value" />
+                </VBox>
+            </Pane>
+
+            <Pane styleClass="stat-card">
+                <VBox spacing="4" layoutX="10" layoutY="10">
+                    <Label text="Avg Lap Time" styleClass="stat-label" />
+                    <Label text="1:32.451" styleClass="stat-value" />
+                </VBox>
+            </Pane>
+
+            <Pane styleClass="stat-card">
+                <VBox spacing="4" layoutX="10" layoutY="10">
+                    <Label text="Pit Stop Avg" styleClass="stat-label" />
+                    <Label text="2.4s" styleClass="stat-value" />
+                </VBox>
+            </Pane>
+        </HBox>
+
+    </VBox>
+  </top>
+
+  <center>
+    <ScrollPane fitToWidth="true" styleClass="center-scroll">
+      <VBox spacing="18" style="-fx-padding:20;">
+        <Label text="MANAGEMENT MODULES" styleClass="section-title" />
+        <GridPane hgap="16" vgap="16">
+          <columnConstraints>
+            <ColumnConstraints percentWidth="33" />
+            <ColumnConstraints percentWidth="33" />
+            <ColumnConstraints percentWidth="34" />
+          </columnConstraints>
+
+          <Pane GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="module-card" onMouseClicked="#openDriverProfile">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="👥" styleClass="module-icon" />
+              <Label text="Manage Drivers" styleClass="module-title" />
+              <Label text="Driver profiles, contracts &amp; performance" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="module-card" onMouseClicked="#openRaceEntry">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="🏁" styleClass="module-icon" />
+              <Label text="Manage Races" styleClass="module-title" />
+              <Label text="Schedule, circuits &amp; race details" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="module-card" onMouseClicked="#openLapTime">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="⏱" styleClass="module-icon" />
+              <Label text="Record Lap Times" styleClass="module-title" />
+              <Label text="Enter lap times and view trends" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="module-card" onMouseClicked="#openPitStop">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="🔧" styleClass="module-icon" />
+              <Label text="Record Pit Stops" styleClass="module-title" />
+              <Label text="Pit stop details and durations" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="module-card" onMouseClicked="#openTireUsage">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="🛞" styleClass="module-icon" />
+              <Label text="Tire Usage" styleClass="module-title" />
+              <Label text="Track tire cycles and condition" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="module-card" onMouseClicked="#openDriverStats">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="📊" styleClass="module-icon" />
+              <Label text="Driver Stats" styleClass="module-title" />
+              <Label text="Performance analytics and ranking" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="module-card" onMouseClicked="#openRaceResults">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="🏆" styleClass="module-icon" />
+              <Label text="Race Results" styleClass="module-title" />
+              <Label text="Official race standings &amp; export" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="module-card" onMouseClicked="#openSeasonSummary">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="📈" styleClass="module-icon" />
+              <Label text="Season Summary" styleClass="module-title" />
+              <Label text="Season aggregates and charts" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+
+          <Pane GridPane.rowIndex="2" GridPane.columnIndex="2" styleClass="module-card" onMouseClicked="#openPerformanceReport">
+            <VBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:18;">
+              <Label text="🧾" styleClass="module-icon" />
+              <Label text="Performance Report" styleClass="module-title" />
+              <Label text="Generate and export reports" styleClass="module-desc" />
+            </VBox>
+          </Pane>
+        </GridPane>
+      </VBox>
+    </ScrollPane>
+  </center>
+
+  <bottom>
+    <HBox alignment="CENTER" style="-fx-padding:12;">
+      <Label text="© 2025 F1 Racing MIS" styleClass="footer" />
+    </HBox>
+  </bottom>
+
+</BorderPane>
